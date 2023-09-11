@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Data</title>
+    <style>
+        body {
+            background-color: rgb(27, 2, 51);
+            color: floralwhite;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Personal Data Page</h1>
+    <div>
+        <h2 data-testid="gabson20">Gabriel Ameh</h2>
+    </div>
+    <div>
+        <img src="https://ca.slack-edge.com/T05FFAA91JP-U05R67NCCBZ-798569238864-512" alt="gabson20" data-testid="slackDisplayImage">
+    </div>
+    <div>
+        <p data-testid="currentDayOfTheWeek"></p>
+    </div>
+    <div>
+        <p data-testid="currentUTCTime"></p>
+    </div>
+    <div>
+        <p data-testid="myTrack">Frontend</p>
+    </div>
+    <div>
+      <a href="https://github.com/Gabson20/HNG-Front-end-Page-Creation.git" data-testid="githubURL">GitHub Repository</a>
+    </div>
+    <script>
+        // JavaScript for displaying real-time data
+        document.addEventListener("DOMContentLoaded", function () {
+            // Slack Name
+            const slackNameElement = document.querySelector('[data-testid="gabson20"]');
+            slackNameElement.textContent = "Gabson20";
+            // Current Day of the Week
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentDayIndex = new Date().getDay();
+            const currentDayElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+            currentDayElement.textContent = daysOfWeek[currentDayIndex];
+
+            // Current UTC Time
+            const currentUTCTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+            currentUTCTimeElement.textContent = Date.now();
+
+            // Track
+            const trackElement = document.querySelector('[data-testid="myTrack"]');
+            trackElement.textContent = "Frontend";
+        });
+    </script>
+</body>
+</html>
